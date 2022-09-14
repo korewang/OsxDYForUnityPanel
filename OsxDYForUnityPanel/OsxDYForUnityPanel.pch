@@ -1,0 +1,60 @@
+//
+//  OsxDYForUnityPanel.pch
+//  OsxDYForUnityPanel
+//  korewang2011@gmail.com
+//  Created by wangxy on 2022/9/14.
+//
+
+#import <Foundation/Foundation.h>
+#import <Appkit/Appkit.h>
+
+
+extern "C" {
+    typedef void (*callbackFunc)(const char *);
+    const char* OsxOpenFilesDialog(const char*, const char*, const char*, bool);
+    void OsxOpenFilePanelAsyncCallback(const char*, const char*, const char*, bool, callbackFunc);
+}
+
+@interface PopUpButtonHandler : NSObject {
+    NSPanel* _panel;
+    NSArray* _extensions;
+}
+@property (nonatomic, strong) NSPanel* panel;
+@property (nonatomic, strong) NSArray* extensions;
+- (id)initWithPanel:(NSSavePanel*)panel;
+- (void)setExtensions:(NSArray*)extensions;
+- (void)selectFormatOpen:(id)sender;
+- (void)selectFormatSave:(id)sender;
+@end
+
+//
+
+@interface ImpOSXOpenFile : NSObject {
+}
+- (id)init;
+- (NSString*)dialogFileFilterPanel:(NSString*)title
+                       directory:(NSString*)directory
+                         filters:(NSString*)filters
+                     multiselect:(BOOL)multiselect
+                  canChooseFiles:(BOOL)canChooseFiles
+                canChooseFolders:(BOOL)canChooseFolders;
+
+- (NSOpenPanel*)createOpenPanel:(NSString*)title
+                      directory:(NSString*)directory
+                        filters:(NSString*)filters
+                    multiselect:(BOOL)multiselect
+                 canChooseFiles:(BOOL)canChooseFiles
+               canChooseFolders:(BOOL)canChooseFolders;
+
+- (void)dialogFileFilterPanelAsyncCall:(NSString*)title
+                       directory:(NSString*)directory
+                         filters:(NSString*)filters
+                     multiselect:(BOOL)multiselect
+                  canChooseFiles:(BOOL)canChooseFiles
+                canChooseFolders:(BOOL)canChooseFolders;
+
+
+- (void)parseFilter:(NSString*)filter
+            filters:(NSMutableArray*)filters
+         extensions:(NSMutableArray*)extensions;
+@end

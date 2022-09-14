@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		600D97BE28D22A6100EF1695 /* OsxDYForUnityPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 600D97BD28D22A6100EF1695 /* OsxDYForUnityPanel.h */; };
-		600D97C028D22A6100EF1695 /* OsxDYForUnityPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 600D97BF28D22A6100EF1695 /* OsxDYForUnityPanel.m */; };
+		600D97BE28D22A6100EF1695 /* OsxDYForUnityPanel.pch in Headers */ = {isa = PBXBuildFile; fileRef = 600D97BD28D22A6100EF1695 /* OsxDYForUnityPanel.pch */; };
+		600D97C028D22A6100EF1695 /* OsxDYForUnityPanel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 600D97BF28D22A6100EF1695 /* OsxDYForUnityPanel.mm */; };
+		600D97C928D22A6E00EF1695 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600D97C828D22A6E00EF1695 /* AppKit.framework */; };
+		600D97CB28D22A7200EF1695 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600D97CA28D22A7200EF1695 /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		600D97BA28D22A6100EF1695 /* libOsxDYForUnityPanel.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libOsxDYForUnityPanel.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		600D97BD28D22A6100EF1695 /* OsxDYForUnityPanel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsxDYForUnityPanel.h; sourceTree = "<group>"; };
-		600D97BF28D22A6100EF1695 /* OsxDYForUnityPanel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OsxDYForUnityPanel.m; sourceTree = "<group>"; };
+		600D97BD28D22A6100EF1695 /* OsxDYForUnityPanel.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OsxDYForUnityPanel.pch; sourceTree = "<group>"; };
+		600D97BF28D22A6100EF1695 /* OsxDYForUnityPanel.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OsxDYForUnityPanel.mm; sourceTree = "<group>"; };
+		600D97C828D22A6E00EF1695 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		600D97CA28D22A7200EF1695 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22,6 +26,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				600D97C928D22A6E00EF1695 /* AppKit.framework in Frameworks */,
+				600D97CB28D22A7200EF1695 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +39,7 @@
 			children = (
 				600D97BC28D22A6100EF1695 /* OsxDYForUnityPanel */,
 				600D97BB28D22A6100EF1695 /* Products */,
+				600D97C728D22A6D00EF1695 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,10 +54,19 @@
 		600D97BC28D22A6100EF1695 /* OsxDYForUnityPanel */ = {
 			isa = PBXGroup;
 			children = (
-				600D97BD28D22A6100EF1695 /* OsxDYForUnityPanel.h */,
-				600D97BF28D22A6100EF1695 /* OsxDYForUnityPanel.m */,
+				600D97BD28D22A6100EF1695 /* OsxDYForUnityPanel.pch */,
+				600D97BF28D22A6100EF1695 /* OsxDYForUnityPanel.mm */,
 			);
 			path = OsxDYForUnityPanel;
+			sourceTree = "<group>";
+		};
+		600D97C728D22A6D00EF1695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				600D97CA28D22A7200EF1695 /* Carbon.framework */,
+				600D97C828D22A6E00EF1695 /* AppKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,7 +76,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				600D97BE28D22A6100EF1695 /* OsxDYForUnityPanel.h in Headers */,
+				600D97BE28D22A6100EF1695 /* OsxDYForUnityPanel.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				600D97C028D22A6100EF1695 /* OsxDYForUnityPanel.m in Sources */,
+				600D97C028D22A6100EF1695 /* OsxDYForUnityPanel.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
